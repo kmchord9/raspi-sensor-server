@@ -12,8 +12,10 @@ RUN pip install \
     rpi.gpio
 
 RUN git clone https://github.com/kmchord9/raspi-sensor.git
-WORKDIR　/raspi-sensor
+WORKDIR raspi-sensor
 
 RUN yarn install
+
+EXPOSE 3000
 
 CMD ["node promise.js"]
