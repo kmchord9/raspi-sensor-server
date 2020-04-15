@@ -1,10 +1,10 @@
 FROM kmchord9/raspi-node-env:node8.17-py3.6.10
 
-#RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  vim \
 
-
-#  && rm -rf /var/lib/apt/lists/* \
-#  && apt-get clean
+  && rm -rf /var/lib/apt/lists/* \
+  && apt-get clean
 
 #pip package
 RUN pip install \
@@ -16,6 +16,4 @@ WORKDIR raspi-sensor
 
 RUN yarn install
 
-EXPOSE 3000
-
-CMD ["node promise.js"]
+CMD ["node", "promise.js"]
